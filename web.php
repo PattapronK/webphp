@@ -1,15 +1,6 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>webphp</title>
-  <link rel="stylesheet" href="index.css">
-</head>
-<body>
-
 <?php
+include 'index.php';
+
 $servername = "localhost";
 $username = "root";
 $password = "asdf1234**";
@@ -30,6 +21,17 @@ if (!$result) {
     die("Query failed: " . mysqli_error($conn));
 }
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>webphp</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
 
 <div class="table">
 <?php
