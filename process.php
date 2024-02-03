@@ -50,7 +50,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Execute the statement
     if (mysqli_stmt_execute($stmt)) {
-        echo "Data added successfully";
+        echo '<script>alert("Data added successfully");</script>';
+        echo '<script>window.location.href = "home.php";</script>';
+        exit;
+
     } else {
         echo "Error: " . mysqli_stmt_error($stmt);
     }
