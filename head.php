@@ -18,7 +18,7 @@
   width: 100%;
   height: 8%;  
   }
-  a { 
+  #N { 
     padding: 2%;
     color: white; 
     font-size: 20px;
@@ -87,7 +87,7 @@
        
      <!-- topbay -->
      <ul id="topbar">
-        <a>Company name</a>
+        <a id="N">Company name</a>
         <input id="Search" style="background-color: #f5f2f2dd;" type="text" placeholder="Search..." name="search" > 
         <li id="singout"  style="float:right;">
             <a href="#singout">Singout</a>

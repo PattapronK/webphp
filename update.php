@@ -1,4 +1,5 @@
 <?php
+
 $servername = "localhost";
 $username = "root";
 $password = "asdf1234**";
@@ -36,8 +37,8 @@ if (isset($_GET['id']) && isset($_GET['salesJob'])) {
 
             // ทำการ execute statement
             if (mysqli_stmt_execute($stmt)) {
-                // echo "Data updated successfully";
-                echo '<script>window.location.href = "home.php";</script>';
+                echo "Data updated successfully";
+                 echo '<script>window.location.href = "home.php";</script>';
             } else {
                 echo "Error updating data: " . mysqli_stmt_error($stmt);
             }
