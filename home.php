@@ -21,7 +21,6 @@ if (!$result) {
     die("Query failed: " . mysqli_error($conn));
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,8 +31,6 @@ if (!$result) {
 </head>
 <body>
 <h1>Data</h1>
-
-<div class="table">
 <?php
 echo "<table>";
 echo "<tr>
@@ -74,8 +71,5 @@ while ($row = mysqli_fetch_assoc($result)) {
 echo "</table>";
 mysqli_close($conn);
 ?>
-</div>
-
-
 </body>
 </html>
