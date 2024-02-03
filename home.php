@@ -1,5 +1,5 @@
 <?php
-include 'index.php';
+include 'head.php';
 
 $servername = "localhost";
 $username = "root";
@@ -31,7 +31,7 @@ if (!$result) {
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
-
+<h1>Data</h1>
 
 <div class="table">
 <?php

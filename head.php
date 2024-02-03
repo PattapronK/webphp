@@ -26,7 +26,7 @@
         </span>&nbsp;&nbsp;&nbsp;&nbsp;
         <a href="#w" padding:10px;>This week</a>
    </div> -->
-     <h1>Data</h1>
+     <!-- <h1>Data</h1> -->
      <!-- <div class="table">
         <h1>table databases</h1>
      </div> -->
@@ -36,12 +36,13 @@
      <!-- Sidebar -->
      <div class="Sidebar">
         <ul>
-            <li><a href="web.php" style="color: #007bff;">Show data</a></li>
-            <li><a href="#Order">Add data</a></li>
+            <li><a id="home" href="home.php">Home</a></li>
+            <li><a id="add"  href="adddata.php">Add data</a></li>
             <li><a href="#Products">------</a></li>
-            <li><a href="#Customer">-------r</a></li>
+            <li><a href="#Customer">-------</a></li>
       
           </ul>
      </div>
+       
 </body>
 </html>
