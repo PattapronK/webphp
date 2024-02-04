@@ -16,25 +16,21 @@ if (isset($_GET['id']) && isset($_GET['salesJob'])) {
     $id = mysqli_real_escape_string($conn, $_GET['id']);
     $salesJob = mysqli_real_escape_string($conn, $_GET['salesJob']);
 
-
     $newSalesJob = '';  
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    
         $newSalesJob = mysqli_real_escape_string($conn, $_POST['new_Sales_Job']);
 
         $sql = "UPDATE production SET Sales_Job = ? WHERE ID = ? AND Sales_Job = ?";
 
         $stmt = mysqli_prepare($conn, $sql);
 
-        
         if ($stmt) {
-            
             mysqli_stmt_bind_param($stmt, "sss", $newSalesJob, $id, $salesJob);
 
             if (mysqli_stmt_execute($stmt)) {
                 echo "Data updated successfully";
-                 echo '<script>window.location.href = "main.php";</script>';
+                echo 'window.location.href = "main.php";';
             } else {
                 echo "Error updating data: " . mysqli_stmt_error($stmt);
             }
@@ -43,17 +39,35 @@ if (isset($_GET['id']) && isset($_GET['salesJob'])) {
         } else {
             echo "Error preparing statement: " . mysqli_error($conn);
         }
-    }
-    
-    else {
+    } else {
+        // แสดงฟอร์มและเพิ่ม JavaScript สำหรับการส่ง Ajax request
 ?>
-   
-    <form action="update.php?id=<?php echo $id; ?>&salesJob=<?php echo $salesJob; ?>" method="post">
+    <form id="updateForm" action="update.php?id=<?php echo $id; ?>&salesJob=<?php echo $salesJob; ?>" method="post">
         <label for="new_Sales_Job">New Sales Job:</label>
         <input type="text" name="new_Sales_Job" required><br>
         
         <input type="submit" value="Update Data">
     </form>
+
+    <script>
+        document.getElementById('updateForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            var formData = new FormData(this);
+
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', this.action, true);
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    console.log(xhr.responseText);
+                    window.location.href = "main.php";
+                } else {
+                    console.error('Error:', xhr.statusText);
+                }
+            };
+            xhr.send(formData);
+        });
+    </script>
 <?php
     }
 } else {
