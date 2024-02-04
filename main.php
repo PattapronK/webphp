@@ -27,8 +27,7 @@ if (!$result) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>webphp</title>
     <link rel="stylesheet" href="style.css">
-    <!-- ลิงก์ไฟล์ jQuery เพื่อใช้ในการทำ Ajax. -->
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
 </head>
 <body>
 
@@ -74,32 +73,38 @@ if (!$result) {
     ?>
 </table>
 <script>
-    $(".delete-row").click(function() {
-    var idToDelete = $(this).data("id");
-    
-    var userResponse = confirm("Do you want to make this list?");
-    if (userResponse) {
-        // ส่งคำขอลบไปที่ delete.php ประมวลผลการลบ
-        $.ajax({
-            type: "POST",
-            url: "delete.php",
-            data: { id: idToDelete },
-            success: function(response) {
-                alert(response);
-                // โหลดข้อมูลใหม่หลังจากลบแถว
-                location.reload();
-            },
-            error: function(error) {
-                console.log(error);
+    document.querySelectorAll('.delete-row').forEach(function (element) {
+        element.addEventListener('click', function () {
+            var idToDelete = this.getAttribute('data-id');
+            
+            var userResponse = confirm("Do you want to make this list?");
+            
+            if (userResponse) {
+                // ส่งคำขอลบไปที่ delete.php ประมวลผลลบ
+                var xhr = new XMLHttpRequest();
+                xhr.open('POST', 'delete.php', true);
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                
+                xhr.onload = function() {
+                    if (xhr.status === 200) {
+                        alert(xhr.responseText);
+                        // โหลดข้อมูลใหม่หลังจากลบแถว
+                        location.reload();
+                    } else {
+                        console.error('Error:', xhr.statusText);
+                    }
+                };
+                
+                xhr.onerror = function() {
+                    console.error('Request failed');
+                };
+                
+                xhr.send('id=' + idToDelete);
+            } else {
+                alert("Undelete");
             }
         });
-    } else {
-        alert("Undelete");
-        
-    }
-});
-
+    });
 </script>
-
 </body>
 </html>
