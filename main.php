@@ -1,6 +1,6 @@
 <?php
 include 'head.php';
-
+// connect database
 $servername = "localhost";
 $username = "root";
 $password = "asdf1234**";
@@ -26,7 +26,9 @@ if (!$result) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>webphp</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- ลิงก์ไฟล์ jQuery เพื่อใช้ในการทำ Ajax. -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 <body>
 
@@ -65,12 +67,39 @@ if (!$result) {
         echo "<td>" . $row["Release_Date"] . "</td>";
         echo "<td>" . $row["Due_Date"] . "</td>";
         echo "<td><a style='display:block' href='update.php?id=" . $row["ID"] . "&salesJob=" . $row["Sales_Job"] . "'>" . $row["Sales_Job"] . "</a></td>";
-        echo "<td>" . $row["WO_Stat"] . "</td>";
+        echo "<td class='delete-row' data-id='" . $row["ID"] . "'>" . $row["WO_Stat"] . "</td>";
         echo "</tr>";
     }
     mysqli_close($conn);
     ?>
 </table>
+<script>
+    $(".delete-row").click(function() {
+    var idToDelete = $(this).data("id");
+    
+    var userResponse = confirm("Do you want to make this list?");
+    if (userResponse) {
+        // ส่งคำขอลบไปที่ delete.php ประมวลผลการลบ
+        $.ajax({
+            type: "POST",
+            url: "delete.php",
+            data: { id: idToDelete },
+            success: function(response) {
+                alert(response);
+                // โหลดข้อมูลใหม่หลังจากลบแถว
+                location.reload();
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
+    } else {
+        alert("Undelete");
+        
+    }
+});
+
+</script>
 
 </body>
 </html>

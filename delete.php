@@ -14,10 +14,10 @@ if (!$conn) {
 if (isset($_POST['id'])) {
     $idToDelete = mysqli_real_escape_string($conn, $_POST['id']);
     
-    // ทำการลบแถวที่มี ID ตรงกับที่ส่งมา
+    // ลบแถวที่มี ID ตรงกับที่ส่งมา
     $sql = "DELETE FROM production WHERE ID = $idToDelete";
 
-    // ตรวจสอบการลบข้อมูลจริง ๆ ในฐานข้อมูล
+  
     if (mysqli_query($conn, $sql)) {
     echo "Data updated successfully";
     } else {

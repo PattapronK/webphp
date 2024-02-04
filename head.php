@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="style.css">
     <!-- <link rel="stylesheet" href="web.php"> -->
     <style>
     #topbar{
@@ -77,8 +77,8 @@
          <!-- Sidebar -->
          <div class="Sidebar">
         <ul id="sidebar">
-            <li><a  href="home.php">Home</a></li>
-            <li><a  href="adddata.php">Add data</a></li>
+            <li><a  href="main.php">Home</a></li>
+            <li><a  href="adddatafrom.php">Add data</a></li>
             <!-- <li><a href="#Products">------</a></li>
             <li><a href="#Customer">-------</a></li> -->
       
