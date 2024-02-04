@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <!-- <link rel="stylesheet" href="web.php"> -->
+  
     <style>
     #topbar{
   margin: 0 ;
@@ -47,7 +47,6 @@
   }
   /*sidebar*/
  #sidebar{
-    /* float: none; */
     position: fixed;
     padding: 0; 
     width: 195px;
@@ -70,7 +69,6 @@
     color: rgb(150, 148, 148);
   } 
 
- */
   </style>
 </head>
 <body>
@@ -78,11 +76,9 @@
          <div class="Sidebar">
         <ul id="sidebar">
             <li><a  href="main.php">Home</a></li>
-            <li><a  href="adddatafrom.php">Add data</a></li>
-            <!-- <li><a href="#Products">------</a></li>
-            <li><a href="#Customer">-------</a></li> -->
+            <li><a  href="adddata.php">Add data</a></li>
       
-          </ul>
+        </ul>
      </div>
        
      <!-- topbay -->

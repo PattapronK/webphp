@@ -11,7 +11,7 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-// ตรวจสอบว่ามี ID และ Sales_Job ที่ส่งมา
+// ตรวจสอบว่ามี ID และ Sales_Job ส่งมา
 if (isset($_GET['id']) && isset($_GET['salesJob'])) {
     $id = mysqli_real_escape_string($conn, $_GET['id']);
     $salesJob = mysqli_real_escape_string($conn, $_GET['salesJob']);
@@ -19,15 +19,12 @@ if (isset($_GET['id']) && isset($_GET['salesJob'])) {
 
     $newSalesJob = '';  
 
-    // ตรวจสอบว่ามีการส่งข้อมูลผ่าน POST
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // ดึงค่าจากฟอร์มและให้ค่าใหม่
+    
         $newSalesJob = mysqli_real_escape_string($conn, $_POST['new_Sales_Job']);
 
-        // ทำการอัปเดตข้อมูลในฐานข้อมูล
         $sql = "UPDATE production SET Sales_Job = ? WHERE ID = ? AND Sales_Job = ?";
 
-        // เตรียม statement
         $stmt = mysqli_prepare($conn, $sql);
 
         
