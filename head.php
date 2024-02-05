@@ -18,30 +18,14 @@
   width: 100%;
   height: 8%;  
   }
-  #N { 
-    padding: 2%;
-    color: white; 
-    font-size: 20px;
-  }
-  #singout{
-    float: left;
-    margin-top: 2px;
-    padding-top: -2%;
-    margin-right: 3%;
-    size: 14px;   
-  }
-  #singout a:visited {
-    color: #afadad;
-  }
-  #singout a:hover {
-    color:rgb(224, 222, 222);
-  } 
+
   #Search{
-      /* position: fixed;   */
+   
       padding: 6px;
       border: none;
-      margin-top: 18px;
-      margin-right: 36px;
+      margin-top: 15px;
+      margin-right: 16px;
+      margin-left: 200px;
       font-size: 17px;
       padding-right: 60%         
   }
@@ -83,10 +67,13 @@
        
      <!-- topbay -->
      <ul id="topbar">
-        <a id="N">Company name</a>
-        <input id="Search" style="background-color: #f5f2f2dd;" type="text" placeholder="Search..." name="search" > 
-        <li id="singout"  style="float:right;">
-            <a href="#singout">Singout</a>
+        <form action="search.php" method="GET">
+            <label for="search_query"></label>
+            <input id="Search" style="background-color: #f5f2f2dd;" type="text" name="search_query" placeholder="Search..." required>
+            <input type="submit" value="Search">
+        </form>
+</form>
+        
         </li>
     </ul>
       
