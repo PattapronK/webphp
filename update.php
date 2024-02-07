@@ -1,5 +1,5 @@
 <?php
-
+include 'check.php';
 $servername = "localhost";
 $username = "root";
 $password = "asdf1234**";

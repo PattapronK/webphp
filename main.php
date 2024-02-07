@@ -1,5 +1,6 @@
 <?php
 include 'head.php';
+include 'check.php';
 // connect database
 $servername = "localhost";
 $username = "root";
@@ -11,6 +12,8 @@ $conn = mysqli_connect($servername, $username, $password, $database);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
+
+
 
 $sql = "SELECT * FROM production";
 $result = mysqli_query($conn, $sql);
@@ -30,8 +33,8 @@ if (!$result) {
 
 </head>
 <body>
-
-<h1>Data</h1>
+<!-- 
+<h1>Data</h1> -->
 
 <table>
     <tr>

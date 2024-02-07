@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
   
     <style>
-    #topbar{
+  #topbar{
   margin: 0 ;
   margin-bottom: 0;
   padding: 0 ;
@@ -20,15 +21,20 @@
   }
 
   #Search{
-   
       padding: 6px;
       border: none;
       margin-top: 15px;
-      margin-right: 16px;
-      margin-left: 200px;
+      margin-right: 15px;
+      margin-left: 190px;
       font-size: 17px;
       padding-right: 60%         
   }
+  #logout{
+      float: right;
+      padding-right: 30px;
+      margin-top: -25px;
+  }
+
   /*sidebar*/
  #sidebar{
     position: fixed;
@@ -37,7 +43,7 @@
     background-color: #dddddde9;
     height: 100%;
     margin-left: -1%;
-    margin-top: 3%;
+    margin-top: -6%;
   }
   li a {
     display: block;
@@ -72,9 +78,11 @@
             <input id="Search" style="background-color: #f5f2f2dd;" type="text" name="search_query" placeholder="Search..." required>
             <input type="submit" value="Search">
         </form>
-</form>
-        
-        </li>
+
+
+       <div id="logout">
+        <a id="log" href="logout.php?logout" style="font-size:17px; color: white;">Logout</a>
+       </div>
     </ul>
       
 </body>

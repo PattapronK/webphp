@@ -1,4 +1,5 @@
 <?php
+include 'check.php';
 
 $servername = "localhost";
 $username = "root";
