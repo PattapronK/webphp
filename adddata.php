@@ -1,4 +1,5 @@
 <?php
+include 'head.php';
 include 'check.php';
 
 $servername = "localhost";
@@ -62,48 +63,48 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 mysqli_close($conn);
 ?>
 
-<form action="adddata.php" method="post">
+<form  class="add"  action="adddata.php" method="post">
     <label for="productionLine">Production Line:</label>
-    <input type="text" name="Production_Line" required><br>
+    <input type="text" name="Production_Line" required><br><br>
 
     <label for="id">ID:</label>
-    <input type="text" name="ID" required><br>
+    <input type="text" name="ID" required><br><br>
 
     <label for="itemNumber">Item Number:</label>
-    <input type="text" name="Item_Number" required><br>
+    <input type="text" name="Item_Number" required><br><br>
 
     <label for="description">Description:</label>
-    <input type="text" name="Description" required><br>
+    <input type="text" name="Description" required><br><br>
 
     <label for="productionRate">Production Rate:</label>
-    <input type="text" name="Production_Rate" required><br>
+    <input type="text" name="Production_Rate" required><br><br>
 
     <label for="rateHours">Rate Hours:</label>
-    <input type="text" name="Rate_Hours" required><br>
+    <input type="text" name="Rate_Hours" required><br><br>
 
     <label for="QuantityOrdered">Quantity Ordered:</label>
-    <input type="text" name="Quantity_Ordered" required><br>
+    <input type="text" name="Quantity_Ordered" required><br><br>
 
     <label for="QuantityComplete">Quantity Completed:</label>
-    <input type="text" name="Quantity_Completed" required><br>
+    <input type="text" name="Quantity_Completed" required><br><br>
 
     <label for="QtyOpen">Qty Open:</label>
-    <input type="text" name="Qty_Open" required><br>
+    <input type="text" name="Qty_Open" required><br><br>
 
     <label for="OrderDate">OrderDate:</label>
-    <input type="text" name="Order_Date" required><br>
+    <input type="text" name="Order_Date" required><br><br>
 
     <label for="ReleaseDate">Release Date:</label>
-    <input type="text" name="Release_Date" required><br>
+    <input type="text" name="Release_Date" required><br><br>
 
     <label for="DueDate">Due Date:</label>
-    <input type="text" name="Due_Date" required><br>
+    <input type="text" name="Due_Date" required><br><br>
 
     <label for="SalesJob">Sales Job:</label>
-    <input type="text" name="Sales_Job" required><br>    
+    <input type="text" name="Sales_Job" required><br><br>    
 
     <label for="WOStat">WO Stat:</label>
-    <input type="text" name="WO_Stat" required><br>  
+    <input type="text" name="WO_Stat" required><br><br><br>  
 
-    <input type="submit" value="Add Data">
+    <input style="font-size: 20px;"   type="submit" value="Add Data">
 </form>

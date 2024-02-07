@@ -3,9 +3,6 @@
   margin-top: 6%;
   margin-left: 15%;
 }
-
-
-
 table {
   font-family: arial, sans-serif;
   font-size: 9px;
@@ -53,9 +50,33 @@ a{
   padding: 10%;
 }
 #frormlog{
-  /* text-align: center; */
-  /* padding-left: 30px; */
   padding: 7%;
   margin-top: 2%;
 }
 
+
+ .add{
+  font-family: arial, sans-serif;
+  font-size: 15px;
+  margin-top: 10%;
+  margin-left: 20%;
+ 
+}
+/*
+#adddata2{
+  font-family: arial, sans-serif;
+  padding: 10px;
+  font-size: 9px;
+  margin-top: 9%;
+  margin-left: 20%;
+  width: 20cm;
+}
+
+#adddata3{
+  font-family: arial, sans-serif;
+  padding: 10px;
+  font-size: 9px;
+  margin-top: 9%;
+  margin-left: 20%;
+  width: 20cm;
+} */
